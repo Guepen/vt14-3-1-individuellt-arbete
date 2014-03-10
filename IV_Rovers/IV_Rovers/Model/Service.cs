@@ -15,6 +15,20 @@ namespace IV_Rovers.Model
             get { return _playerDAL ?? (_playerDAL = new PlayerDAL()); }
         }
 
+        private PlayerTypeDAL _playerTypeDAL;
+
+        private PlayerTypeDAL PlayerTypeDAL
+        {
+            get { return _playerTypeDAL ?? (_playerTypeDAL = new PlayerTypeDAL()); }
+        }
+
+        private PositionDAL _positionDAL;
+
+        private PositionDAL PositionDAL
+        {
+            get { return _positionDAL ?? (_positionDAL = new PositionDAL()); }
+        }
+
         public void DeletePlayer(Player player)
         {
             DeletePlayer(player.PlayerID);
@@ -47,6 +61,26 @@ namespace IV_Rovers.Model
             {
                 PlayerDAL.UpdatePlayer(player);
             }
+        }
+
+        public IEnumerable<PlayerType> GetPlayerTypes()
+        {
+            return PlayerTypeDAL.GetPlayerTypes();
+        }
+
+        public void SavePosition(Position position)
+        {
+            PositionDAL.InsertPosition(position);
+        }
+
+        public IEnumerable<Position> GetPosition(int id)
+        {
+            return PositionDAL.GetPlayerPosition(id);
+        }
+
+        public PlayerType GetPlayerTypeByID(int PlTypeID)
+        {
+            return PlayerTypeDAL.GetPlayerTypeByID(PlTypeID);
         }
     }
 }

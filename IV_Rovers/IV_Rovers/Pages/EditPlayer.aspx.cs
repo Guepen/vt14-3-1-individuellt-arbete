@@ -22,7 +22,7 @@ namespace IV_Rovers.Pages
 
         }
 
-        public object FormView1_GetItem([RouteData] int id)
+        public Player FormView1_GetItem([RouteData] int id)
         {
             try
             {
@@ -49,8 +49,30 @@ namespace IV_Rovers.Pages
             if (TryUpdateModel(player))
             {
                 Service.SavePlayer(player);
+                
+                var checkBoxList = FormView1.FindControl("CheckBoxList") as CheckBoxList;
+                for (int i = 0; i < checkBoxList.Items.Count ; i++)
+                {
+                    var position = new Position();
+                    position.PlTypeID = int.Parse(checkBoxList.Items[i].Value);
+                    position.PlayerID = player.PlayerID;
+                if (checkBoxList.Items[i].Selected)
+                {
+                    Service.SavePosition(position);
+                }
+                else
+                {
+                    //Service.DeletePosition(position);
+
+                }
+			}
 
             }
+        }
+
+        public IEnumerable<PlayerType> PlayerFormView_GetItem()
+        {
+            return Service.GetPlayerTypes();
         }
     }
 }

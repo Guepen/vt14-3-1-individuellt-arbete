@@ -49,6 +49,8 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Tröjnummmer måste anges"
                     ControlToValidate="ShirtNr" ValidationGroup="Insert" Display="None"></asp:RequiredFieldValidator>
             </div>
+
+            <asp:CheckBoxList ID="CheckBoxList" runat="server" ItemType="IV_Rovers.Model.PlayerType" DataValueField="PlTypeID" DataTextField="PlType" SelectMethod="PlayerFormView_GetItem"  ></asp:CheckBoxList>
             <div>
                 <asp:LinkButton ID="LinkButton1" runat="server" Text="Spara" CommandName="Update"/>
                 <asp:HyperLink ID="HyperLink1" runat="server" Text="Avbryt" NavigateUrl='<%# GetRouteUrl("Details", new { id = Item.PlayerID }) %>' />

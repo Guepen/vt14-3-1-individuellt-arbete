@@ -6,6 +6,7 @@
         DefaultMode="Insert"
         RenderOuterTable="false"
         InsertMethod="PlayerFormView_InsertItem">
+        
         <InsertItemTemplate>
             <div>
                 <label>Firstname</label>
@@ -47,6 +48,8 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Tröjnummmer måste anges"
                     ControlToValidate="ShirtNr" ValidationGroup="Insert" Display="None"></asp:RequiredFieldValidator>
             </div>
+
+              <asp:CheckBoxList ID="CheckBoxList" runat="server" ItemType="IV_Rovers.Model.PlayerType" DataValueField="PlTypeID" DataTextField="PlType" SelectMethod="PlayerFormView_GetItem"  ></asp:CheckBoxList>
             <div>
                 <asp:LinkButton ID="LinkButton3" runat="server" CommandName="Insert" Text="Lägg till" ValidationGroup="Insert" />
                 <asp:HyperLink ID="HyperLink3" runat="server" Text="Avbryt" NavigateUrl='<%# GetRouteUrl("PlayerList", null)%>' />
@@ -54,6 +57,5 @@
         </InsertItemTemplate>
     </asp:FormView>
 
-    <asp:FormView ID="FormView1" runat="server">
-    </asp:FormView>
+  
 </asp:Content>

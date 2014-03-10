@@ -18,7 +18,7 @@ namespace IV_Rovers.Pages
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         public void PlayerFormView_InsertItem(Player player)
@@ -29,6 +29,22 @@ namespace IV_Rovers.Pages
                 try
                 {
                     Service.SavePlayer(player);
+                    var checkBoxList = PlayerFormView.FindControl("CheckBoxList") as CheckBoxList;
+                    var types = new List<int>(30);
+                 
+
+                    for (int i = 0; i < checkBoxList.Items.Count ; i++)
+			{
+			 if (checkBoxList.Items[i].Selected)
+             {
+                 var position = new Position();
+                 position.PlTypeID = int.Parse(checkBoxList.Items[i].Value);
+                 position.PlayerID = player.PlayerID;
+                 Service.SavePosition(position);
+	}
+			}
+
+
                 }
 
                 catch
@@ -37,6 +53,12 @@ namespace IV_Rovers.Pages
                 }
 
             }
+        }
+
+
+        public IEnumerable<PlayerType> PlayerFormView_GetItem()
+        {
+            return Service.GetPlayerTypes();
         }
     }
 }

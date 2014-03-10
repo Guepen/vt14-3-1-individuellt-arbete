@@ -80,8 +80,10 @@
     </Compile>
     <Compile Include="Model\DAL\DALBase.cs" />
     <Compile Include="Model\DAL\PlayerDAL.cs" />
+    <Compile Include="Model\DAL\PlayerTypeDAL.cs" />
     <Compile Include="Model\DAL\PositionDAL.cs" />
     <Compile Include="Model\Player.cs" />
+    <Compile Include="Model\PlayerType.cs" />
     <Compile Include="Model\Position.cs" />
     <Compile Include="Model\Service.cs" />
     <Compile Include="Pages\DeletePlayer.aspx.cs">

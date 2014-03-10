@@ -34,11 +34,36 @@ namespace IV_Rovers.Pages
             try
             {
                 Service.DeletePlayer(id);
-                GetRouteUrl("PlayerList");
+                Response.RedirectToRoute("PlayerList");
+                Context.ApplicationInstance.CompleteRequest();
             }
             catch
             {
                 ModelState.AddModelError(String.Empty, "Ett oväntat fel inträffade vid försök till att radera kontakt");
+            }
+        }
+
+        public IEnumerable<Position> ListView1_GetData([RouteData] int id)
+        {
+            return Service.GetPosition(id);
+        }
+
+        protected void Player_ItemDataBound(object sender, ListViewItemEventArgs e)
+        {
+            var label = e.Item.FindControl("PositionLabel") as Label;
+            if (label != null)
+            {
+                // Typomvandlar e.Item.DataItem så att primärnyckelns värde kan hämtas och...
+                var position = (Position)e.Item.DataItem;
+
+                //var playerType = Service.GetPlayerTypeByID(position.PlTypeID).PlType;
+                
+                label.Text = Service.GetPlayerTypeByID(position.PlTypeID).PlType; 
+                //position.PlTypeID; 
+                // ...som sedan kan användas för att hämta ett ("cachat") kontakttypobjekt...
+
+                // ...så att en beskrivning av kontaktypen kan presenteras; ex: Arbete: 012-345 67 89
+                //label.Text = String.Format(label.Text);      
             }
         }
     }
