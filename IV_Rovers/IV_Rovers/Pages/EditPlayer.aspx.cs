@@ -49,24 +49,26 @@ namespace IV_Rovers.Pages
             if (TryUpdateModel(player))
             {
                 Service.SavePlayer(player);
-                
+
                 var checkBoxList = FormView1.FindControl("CheckBoxList") as CheckBoxList;
-                for (int i = 0; i < checkBoxList.Items.Count ; i++)
+                for (int i = 0; i < checkBoxList.Items.Count; i++)
                 {
                     var position = new Position();
                     position.PlTypeID = int.Parse(checkBoxList.Items[i].Value);
                     position.PlayerID = player.PlayerID;
-                if (checkBoxList.Items[i].Selected)
-                {
-                    Service.SavePosition(position);
-                }
-                else
-                {
-                    //Service.DeletePosition(position);
 
-                }
-			}
+                    if (checkBoxList.Items[i].Selected)
+                    {
+                        Service.SavePosition(position);
+                    }
+                    else
+                    {
+                        Service.DeletePosition(position);
 
+                    }
+                }
+                Response.RedirectToRoute("Details", new { id = PlayerID});
+                Context.ApplicationInstance.CompleteRequest();
             }
         }
 

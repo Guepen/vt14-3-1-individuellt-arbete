@@ -34,7 +34,9 @@ namespace IV_Rovers.Pages
             try
             {
                 Service.DeletePlayer(id);
-                Response.RedirectToRoute("PlayerList");
+                Response.Redirect("~/Pages/PlayerList.aspx");
+                //Bättre lösning men fungerar ej!
+                //Response.RedirectToRoute("PlayerList");
                 Context.ApplicationInstance.CompleteRequest();
             }
             catch

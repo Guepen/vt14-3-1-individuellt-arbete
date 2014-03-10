@@ -51,7 +51,7 @@
             <div>
                 <asp:HyperLink ID="HyperLink1" runat="server" Text="Edit" NavigateUrl='<%# GetRouteUrl("Edit", new { id = Item.PlayerID }) %>' />
                 <asp:LinkButton ID="LinkButton2" runat="server" CommandName="Delete" Text="Ta Bort" CausesValidation="false" OnClientClick="return confirm('Är du säker på att du vill ta bort Spelaren?')" />
-                <asp:HyperLink ID="HyperLink3" runat="server" Text="Avbryt" NavigateUrl='<%# GetRouteUrl("PlayerList", null)%>' />
+                <asp:HyperLink ID="HyperLink3" runat="server" Text="Go To List" NavigateUrl='<%# GetRouteUrl("PlayerList", null)%>' />
             </div>
         </ItemTemplate>
 

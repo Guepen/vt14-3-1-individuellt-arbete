@@ -73,6 +73,11 @@ namespace IV_Rovers.Model
             PositionDAL.InsertPosition(position);
         }
 
+        public void DeletePosition(Position position)
+        {
+            PositionDAL.Delete(position);
+        }
+
         public IEnumerable<Position> GetPosition(int id)
         {
             return PositionDAL.GetPlayerPosition(id);

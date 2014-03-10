@@ -34,7 +34,7 @@ namespace IV_Rovers.Model.DAL
             }
         }
 
-       /* public void Delete(int positionID)
+        public void Delete(Position position)
         {
             using (SqlConnection conn = createConnection())
             {
@@ -43,7 +43,8 @@ namespace IV_Rovers.Model.DAL
                     SqlCommand cmd = new SqlCommand("AppSchema.uspDeletePosition", conn);
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add(@"PlayerID", SqlDbType.Int, 4).Value = positionID;
+                    cmd.Parameters.Add(@"PlTypeID", SqlDbType.TinyInt).Value = position.PlTypeID;
+                    cmd.Parameters.Add(@"PlayerID", SqlDbType.Int).Value = position.PlayerID;
 
                     conn.Open();
                     cmd.ExecuteNonQuery();
@@ -51,9 +52,10 @@ namespace IV_Rovers.Model.DAL
 
                 catch
                 {
-                    throw new ArgumentException("Det gick inte att ta bort kontakten");
+                    throw new ArgumentException("Det gick inte att ta bort positionen");
                 }
-        }*/
+            }
+        }
 
         public IEnumerable<Position> GetPlayerPosition(int PlayerID)
         {
