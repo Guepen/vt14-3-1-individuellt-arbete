@@ -10,33 +10,24 @@
 namespace IV_Rovers.Pages {
     
     
-    public partial class PlayerList {
+    public partial class InsertPlayer {
         
         /// <summary>
-        /// ValidationSummary2 control.
+        /// PlayerFormView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary2;
+        protected global::System.Web.UI.WebControls.FormView PlayerFormView;
         
         /// <summary>
-        /// ValidationSummary1 control.
+        /// FormView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
-        
-        /// <summary>
-        /// PlayerListView control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView PlayerListView;
+        protected global::System.Web.UI.WebControls.FormView FormView1;
     }
 }

@@ -2,33 +2,32 @@
 
 
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:HyperLink runat="server" Text="New Player" NavigateUrl="<%$ RouteUrl:routename=InsertPlayer %>"/>
+    <asp:ValidationSummary ID="ValidationSummary2" runat="server" ValidationGroup="Insert" />
+    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="" />
     <asp:ListView ID="PlayerListView" runat="server"
         ItemType="IV_Rovers.Model.Player"
         SelectMethod="PlayerListView_GetData"
-        DataKeyNames="PlayerID"
-        >
+        UpdateMethod="PlayerListView_UpdateItem"
+        DeleteMethod="PlayerListView_DeleteItem"
+        DataKeyNames="PlayerID">
         <LayoutTemplate>
-                    <table class="Table">
-                        <tr>
-                            <th>
-                                Firstname
-                            </th>
-                            <th>
-                                Lastname
-                            </th>
-                            <th>
-                                Height
-                            </th>
-                            <th>
-                                Weight
-                            </th>
-                            <th>
-                                Shirtnumber
-                            </th>
-                        </tr>
-                        <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
-                         </table>
-            </LayoutTemplate>
+            <table class="Table">
+                <tr>
+                    <th>Firstname
+                    </th>
+                    <th>Lastname
+                    </th>
+                    <th>Height
+                    </th>
+                    <th>Weight
+                    </th>
+                    <th>Shirtnumber
+                    </th>
+                </tr>
+                <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
+            </table>
+        </LayoutTemplate>
         <ItemTemplate>
             <tr>
                 <td>
@@ -46,9 +45,20 @@
                 <td>
                     <%#: Item.ShirtNr %>
                 </td>
+                <td>
+                    <asp:HyperLink  Text="More Information" runat="server" NavigateUrl='<%# GetRouteUrl("Details", new { id = Item.PlayerID})%>'/>
+                </td>
             </tr>
         </ItemTemplate>
-
+        <EmptyDataTemplate>
+            <%-- Detta visas då uppgifter saknas i databasen. --%>
+            <table>
+                <tr>
+                    <td>Spelaruppgifter saknas.
+                    </td>
+                </tr>
+            </table>
+        </EmptyDataTemplate>
     </asp:ListView>
 </asp:Content>
 

@@ -38,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.2.1.0\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -57,15 +60,58 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Pages\DeletePlayer.aspx" />
+    <Content Include="Pages\EditPlayer.aspx" />
+    <Content Include="Pages\InsertPlayer.aspx" />
+    <Content Include="Pages\PlayerDetails.aspx" />
     <Content Include="Pages\PlayerList.aspx" />
     <Content Include="Pages\Shared\Error.aspx" />
+    <Content Include="packages.config" />
+    <None Include="Scripts\jquery-2.1.0.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.0.js" />
+    <Content Include="Scripts\jquery-2.1.0.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Model\DAL\DALBase.cs" />
     <Compile Include="Model\DAL\PlayerDAL.cs" />
+    <Compile Include="Model\DAL\PositionDAL.cs" />
     <Compile Include="Model\Player.cs" />
+    <Compile Include="Model\Position.cs" />
     <Compile Include="Model\Service.cs" />
+    <Compile Include="Pages\DeletePlayer.aspx.cs">
+      <DependentUpon>DeletePlayer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\DeletePlayer.aspx.designer.cs">
+      <DependentUpon>DeletePlayer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditPlayer.aspx.cs">
+      <DependentUpon>EditPlayer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EditPlayer.aspx.designer.cs">
+      <DependentUpon>EditPlayer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\InsertPlayer.aspx.cs">
+      <DependentUpon>InsertPlayer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\InsertPlayer.aspx.designer.cs">
+      <DependentUpon>InsertPlayer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PlayerDetails.aspx.cs">
+      <DependentUpon>PlayerDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PlayerDetails.aspx.designer.cs">
+      <DependentUpon>PlayerDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PlayerList.aspx.cs">
       <DependentUpon>PlayerList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -91,6 +137,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Pages\Shared\Site.Master" />
+    <Content Include="Scripts\jquery-2.1.0.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

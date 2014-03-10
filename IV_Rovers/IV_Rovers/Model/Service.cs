@@ -15,20 +15,38 @@ namespace IV_Rovers.Model
             get { return _playerDAL ?? (_playerDAL = new PlayerDAL()); }
         }
 
+        public void DeletePlayer(Player player)
+        {
+            DeletePlayer(player.PlayerID);
+        }
+
         public void DeletePlayer(int playerID)
         {
-            throw new NotImplementedException();
+            PlayerDAL.DeletePlayer(playerID);
         }
 
         public Player GetPlayerByID(int playerID)
         {
-            throw new NotImplementedException();
+            return PlayerDAL.GetPlayerByID(playerID);
         }
 
         public IEnumerable<Player> GetPlayers()
         {
             return PlayerDAL.GetPlayers();
 
+        }
+
+        public void SavePlayer(Player player)
+        {
+            if (player.PlayerID == 0)
+            {
+                PlayerDAL.InsertPlayer(player);
+            }
+
+            else
+            {
+                PlayerDAL.UpdatePlayer(player);
+            }
         }
     }
 }
