@@ -50,8 +50,8 @@
                     ControlToValidate="ShirtNr" ValidationGroup="Insert" Display="None"></asp:RequiredFieldValidator>
             </div>
 
-              <asp:CheckBoxList ID="CheckBoxList" runat="server" ItemType="IV_Rovers.Model.PlayerType" DataValueField="PlTypeID" DataTextField="PlType" SelectMethod="PlayerFormView_GetItem"  />
-            <asp:CustomValidator ID="CheckboxValidator" runat="server" ClientValidationFunction="CheckboxValidator_ClientValidate" OnServerValidate="CheckboxValidator_ServerValidate" ValidationGroup="Insert"  ErrorMessage="You must select atleast one position"></asp:CustomValidator>
+              <asp:CheckBoxList ID="CheckBoxList" runat="server"  ItemType="IV_Rovers.Model.PlayerType" DataValueField="PlTypeID" DataTextField="PlType" SelectMethod="PlayerFormView_GetItem"  RepeatColumns="5" RepeatLayout="Table" />
+            <asp:CustomValidator ID="CheckboxValidator" runat="server" Display="None" ClientValidationFunction="CheckboxValidator_ClientValidate" OnServerValidate="CheckboxValidator_ServerValidate" ValidationGroup="Insert"  ErrorMessage="You must select atleast one position"></asp:CustomValidator>
             <div>
                 <asp:LinkButton ID="LinkButton3" runat="server" CommandName="Insert" Text="Lägg till" ValidationGroup="Insert" />
                 <asp:HyperLink ID="HyperLink3" runat="server" Text="Avbryt" NavigateUrl='<%# GetRouteUrl("PlayerList", null)%>' />

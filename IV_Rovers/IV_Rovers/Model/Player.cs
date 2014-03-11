@@ -19,15 +19,12 @@ namespace IV_Rovers.Model
         public string LName { get; set; }
 
         [Required(ErrorMessage = "You must add the players heigth!")]
-        [MaxLength(3, ErrorMessage = "Maxlength for height is 3 numbers")]
         public int Height { get; set; }
 
         [Required(ErrorMessage = "You must add the players weight!")]
-        [MaxLength(3, ErrorMessage = "Maxlength for weight is 3 numbers")]
         public int Weight { get; set; }
 
         [Required(ErrorMessage = "You must add the players shirtnumber!")]
-        [MaxLength(2, ErrorMessage = "Maxlength for shirtnumber is 2 numbers")]
         public byte ShirtNr { get; set; }
     }
 }
