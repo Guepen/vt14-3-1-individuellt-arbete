@@ -52,21 +52,23 @@ namespace IV_Rovers.Pages
 
         protected void Player_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
-            var label = e.Item.FindControl("PositionLabel") as Label;
+            /*var label = e.Item.FindControl("PositionLabel") as Label;
             if (label != null)
             {
                 // Typomvandlar e.Item.DataItem så att primärnyckelns värde kan hämtas och...
                 var position = (Position)e.Item.DataItem;
+   
+                label.Text = Service.GetPlayerTypeByID(position.PlTypeID).PlType;
+            */
 
-                //var playerType = Service.GetPlayerTypeByID(position.PlTypeID).PlType;
-                
-                label.Text = Service.GetPlayerTypeByID(position.PlTypeID).PlType; 
-                //position.PlTypeID; 
-                // ...som sedan kan användas för att hämta ett ("cachat") kontakttypobjekt...
-
-                // ...så att en beskrivning av kontaktypen kan presenteras; ex: Arbete: 012-345 67 89
-                //label.Text = String.Format(label.Text);      
+            var position = e.Item.DataItem as Position;
+            if (position != null)
+            {
+                var playerType = Service.GetPlayerTypeByID(position.PlTypeID);
+                var label = e.Item.FindControl("PositionLabel") as Label;
+                label.Text = playerType.PlType;
+            }
+	
             }
         }
     }
-}

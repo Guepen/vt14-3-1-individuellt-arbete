@@ -9,6 +9,7 @@
         InsertMethod="PlayerFormView_InsertItem">
         
         <InsertItemTemplate>
+            <h2>New Player</h2>
             <div>
                 <label>Firstname</label>
             </div>
@@ -49,7 +50,7 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Tröjnummmer måste anges"
                     ControlToValidate="ShirtNr" ValidationGroup="Insert" Display="None"></asp:RequiredFieldValidator>
             </div>
-
+            <h2>Position</h2>
               <asp:CheckBoxList ID="CheckBoxList" runat="server"  ItemType="IV_Rovers.Model.PlayerType" DataValueField="PlTypeID" DataTextField="PlType" SelectMethod="PlayerFormView_GetItem"  RepeatColumns="5" RepeatLayout="Table" />
             <asp:CustomValidator ID="CheckboxValidator" runat="server" Display="None" ClientValidationFunction="CheckboxValidator_ClientValidate" OnServerValidate="CheckboxValidator_ServerValidate" ValidationGroup="Insert"  ErrorMessage="You must select atleast one position"></asp:CustomValidator>
             <div>
