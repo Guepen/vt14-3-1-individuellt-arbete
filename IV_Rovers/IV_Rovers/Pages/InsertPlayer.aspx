@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Shared/Site.Master" AutoEventWireup="true" CodeBehind="InsertPlayer.aspx.cs" Inherits="IV_Rovers.Pages.InsertPlayer" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Insert" />
     <asp:FormView ID="PlayerFormView" runat="server"
         ItemType="IV_Rovers.Model.Player"
         DefaultMode="Insert"
@@ -49,7 +50,8 @@
                     ControlToValidate="ShirtNr" ValidationGroup="Insert" Display="None"></asp:RequiredFieldValidator>
             </div>
 
-              <asp:CheckBoxList ID="CheckBoxList" runat="server" ItemType="IV_Rovers.Model.PlayerType" DataValueField="PlTypeID" DataTextField="PlType" SelectMethod="PlayerFormView_GetItem"  ></asp:CheckBoxList>
+              <asp:CheckBoxList ID="CheckBoxList" runat="server" ItemType="IV_Rovers.Model.PlayerType" DataValueField="PlTypeID" DataTextField="PlType" SelectMethod="PlayerFormView_GetItem"  />
+            <asp:CustomValidator ID="CheckboxValidator" runat="server" ClientValidationFunction="CheckboxValidator_ClientValidate" OnServerValidate="CheckboxValidator_ServerValidate" ValidationGroup="Insert"  ErrorMessage="You must select atleast one position"></asp:CustomValidator>
             <div>
                 <asp:LinkButton ID="LinkButton3" runat="server" CommandName="Insert" Text="Lägg till" ValidationGroup="Insert" />
                 <asp:HyperLink ID="HyperLink3" runat="server" Text="Avbryt" NavigateUrl='<%# GetRouteUrl("PlayerList", null)%>' />
@@ -57,5 +59,4 @@
         </InsertItemTemplate>
     </asp:FormView>
 
-  
 </asp:Content>

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Script;
 
 namespace IV_Rovers.Pages
 {
@@ -30,7 +31,7 @@ namespace IV_Rovers.Pages
                 {
                     Service.SavePlayer(player);
                     var checkBoxList = PlayerFormView.FindControl("CheckBoxList") as CheckBoxList;
-                 
+
                     for (int i = 0; i < checkBoxList.Items.Count; i++)
                     {
                         if (checkBoxList.Items[i].Selected)
@@ -59,5 +60,24 @@ namespace IV_Rovers.Pages
         {
             return Service.GetPlayerTypes();
         }
+
+        protected void CheckboxValidator_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            var checkBoxList = PlayerFormView.FindControl("CheckBoxList") as CheckBoxList;
+
+            var checkboxHasValue = checkBoxList.SelectedItem;
+
+            if (checkboxHasValue != null)
+            {
+                args.IsValid = true;
+            }
+
+            else
+            {
+                args.IsValid = false;
+            }
+
+        }
+
     }
 }

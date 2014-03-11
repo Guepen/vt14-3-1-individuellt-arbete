@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using IV_Rovers.Model.DAL;
+using System.ComponentModel.DataAnnotations;
 
 namespace IV_Rovers.Model
 {
@@ -52,6 +53,15 @@ namespace IV_Rovers.Model
 
         public void SavePlayer(Player player)
         {
+            ICollection<ValidationResult> validationResults;
+
+            if (!player.ValidatePlayer(out validationResults))
+            {
+                var ex = new ValidationException("Objektet klarade inte valideringen.");
+                ex.Data.Add("ValidationResults", validationResults);
+                throw ex;
+            }
+            
             if (player.PlayerID == 0)
             {
                 PlayerDAL.InsertPlayer(player);
@@ -70,6 +80,7 @@ namespace IV_Rovers.Model
 
         public void SavePosition(Position position)
         {
+            
             PositionDAL.InsertPosition(position);
         }
 
