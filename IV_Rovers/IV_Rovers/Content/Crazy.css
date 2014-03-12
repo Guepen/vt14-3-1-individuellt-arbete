@@ -1,0 +1,208 @@
+﻿body {
+    margin-left: auto;
+    width: 75%;
+    font-style:oblique;
+    background:url(https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT2dY044MCLtRldoevh_8KKDd1-5xk12RTgqsROrJF1tkF1wLgHWA);
+    background-repeat:no-repeat;
+    background-size:cover;
+    
+}
+h1 {
+    margin-left:11%;
+    color:whitesmoke;
+    -webkit-animation: infinite-spinning 6s linear infinite
+}
+#Edit {
+    color: whitesmoke;
+}
+
+@-webkit-keyframes colors {
+    0% {
+        color: darkcyan;
+    }
+    50% {
+        color:  WindowFrame;
+    }
+    100% {
+        color: Window;
+    }
+}
+
+@-webkit-keyframes fontbulger {
+        0%, 100% {
+                font-size: 3px;
+        }
+        50% {
+                font-size: 20px;
+        }
+}
+
+@-webkit-keyframes infinite-spinning {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+#Menu {
+    display:block;
+    background-color:whitesmoke;
+    margin:7px;
+    width:140px;
+    border-radius:7px;
+    
+}
+#Menu a {
+    -webkit-animation: colors 5s reverse reverse;
+     display:block;
+     height:20px;
+     
+     border:1px solid red;
+     margin:auto;
+     text-decoration:none;
+     text-align:center;
+     color:whitesmoke;
+     background:blue;
+     padding-top:5px;
+     padding-bottom:5px;
+}
+
+#Menu a:hover {
+    -webkit-animation: resize;
+    animation-duration: 1s;
+    animation-iteration-count: 4;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+     display:block;
+     height:20px;
+     border:1px solid red;
+     margin:auto;
+     text-decoration:none;
+     text-align:center;
+     color:blue;
+     background:whitesmoke;
+     padding-top:5px;
+     padding-bottom:5px;
+}
+
+table, th, td {
+    border: 1px solid red;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+
+tr {
+     background-color:whitesmoke;
+     -webkit-animation: fontbulger 5s linear infinite;
+     -webkit-animation: infinite-spinning 6s linear infinite
+}
+
+tr:nth-child(2n) {
+    background-color:lightblue;
+    -webkit-animation: fontbulger 5s reverse infinite;
+    -webkit-animation: infinite-spinning 6s linear infinite
+   
+}
+
+th {
+    font-size: 1.1em;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: blue;
+    color: #ffffff;
+    -webkit-animation: colors 5s linear infinite;
+}
+
+td, th {
+    font-size: 1em;
+    border: 1px solid red;
+    padding: 3px 7px 2px 7px;
+}
+
+#playground{
+    float:left;
+    position: relative;
+    height: 400px;
+    width: 100%;
+}
+
+#ball{
+    height: 20px;
+    width: 20px;
+    background: red;
+    position: absolute;
+    border-radius: 10px;
+ 
+ 
+   -webkit-animation: horizontal 3.2s, vertical 0.9s;
+   -webkit-animation-timing-function: linear;
+   -webkit-animation-iteration-count: infinite;    
+ 
+   -moz-animation: horizontal 3.2s, vertical 0.9s;
+   -moz-animation-timing-function: linear;
+   -moz-animation-iteration-count: infinite;    
+}
+
+input {
+    -webkit-animation: resize 5s linear infinite;
+    display:block;
+}
+
+#CrazyButton {
+    float:left;
+    position:fixed;
+    margin-left:-23%
+}
+
+#BoringButton {
+    float:right;
+}
+
+
+label {
+    color: whitesmoke;
+}
+#ValidationSummary2, #ValidationSummary1 {
+    color:red;
+}
+
+@-webkit-keyframes vertical {
+    0% { top: 0;}
+    50% { top: 100%;}
+    100%{top:0;}
+}
+@-webkit-keyframes horizontal {
+    0% { left: 0;}
+    50% { left: 100%;}
+    100%{left:0;}
+}
+@-moz-keyframes vertical {
+    0% { top: 0;}
+    50% { top: 100%;}
+    100%{top:0;}
+}
+@-moz-keyframes horizontal {
+    0% { left: 0;}
+    50% { left: 100%;}
+    100%{left:0;}
+}
+
+@-webkit-keyframes resize {
+  0% {
+    padding: 0;
+  }
+  50% {
+    padding: 10px 20px;
+    background-color:darkcyan;
+  }
+  100% {
+    padding: 3px 60px;
+    background-color:lightgoldenrodyellow;
+  }
+}

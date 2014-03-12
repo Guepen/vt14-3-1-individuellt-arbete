@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Shared/Site.Master" AutoEventWireup="true" CodeBehind="PlayerList.aspx.cs" Inherits="IV_Rovers.Pages.PlayerList" %>
 
-
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Panel runat="server">
         <asp:Literal ID="SuccessLiteral" Visible="false" runat="server"></asp:Literal>
@@ -8,7 +7,7 @@
 
     <div id="Menu">
         <asp:HyperLink runat="server" Text="New Player" NavigateUrl="<%$ RouteUrl:routename=InsertPlayer %>" />
-
+      
     </div>
     <asp:ValidationSummary ID="ValidationSummary2" runat="server" ValidationGroup="Insert" />
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="" />
@@ -40,7 +39,7 @@
         </LayoutTemplate>
         <ItemTemplate>
             <tr>
-                <td class="alt">
+                <td>
                     <%#: Item.FName %>
                 </td>
                 <td>
@@ -71,6 +70,10 @@
             </table>
         </EmptyDataTemplate>
     </asp:ListView>
+
+     <div id='playground'>
+    <div id='ball'></div>
+    </div>
 </asp:Content>
 
 

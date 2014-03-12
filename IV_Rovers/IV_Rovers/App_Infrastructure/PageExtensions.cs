@@ -12,7 +12,12 @@ namespace IV_Rovers
             return value;
         }
 
-       
+        public static object GetLayOut(this Page page, string key)
+        {
+            var value = page.Session[key];
+
+            return value;
+        }
 
         public static void SetTempData(this Page page, string key, object value)
         {
