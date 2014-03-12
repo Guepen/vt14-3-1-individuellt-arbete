@@ -56,7 +56,7 @@
             <asp:CheckBoxList ID="CheckBoxList" runat="server" ItemType="IV_Rovers.Model.PlayerType" DataValueField="PlTypeID" DataTextField="PlType" SelectMethod="PlayerFormView_GetItem" OnDataBound="CheckBoxList_DataBound"  ></asp:CheckBoxList>
             <asp:CustomValidator ID="UpdatePosition" runat="server" ValidationGroup="Update" OnServerValidate="UpdatePosition_ServerValidate" ErrorMessage="You must Select atleast one position!" Display="None"></asp:CustomValidator>
             <div>
-                <asp:LinkButton ID="LinkButton1" runat="server" Text="Spara" CommandName="Update"/>
+                <asp:LinkButton ID="LinkButton1" runat="server" Text="Spara" CommandName="Update" ValidationGroup="Update"/>
                 <asp:HyperLink ID="HyperLink1" runat="server" Text="Avbryt" NavigateUrl='<%# GetRouteUrl("Details", new { id = Item.PlayerID }) %>' />
             </div>
         </EditItemTemplate>

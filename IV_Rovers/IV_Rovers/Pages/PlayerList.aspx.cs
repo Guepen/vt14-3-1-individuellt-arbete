@@ -20,6 +20,8 @@ namespace IV_Rovers.Pages
         {
             SuccessLiteral.Text = Page.GetTempData("SuccessMessage") as string;
             SuccessLiteral.Visible = !String.IsNullOrWhiteSpace(SuccessLiteral.Text);
+
+            var table = PlayerListView.FindControl("Table") as Table; 
         }
 
        public IEnumerable<Player>PlayerListView_GetData()

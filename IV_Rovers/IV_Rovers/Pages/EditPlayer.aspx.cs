@@ -61,6 +61,7 @@ namespace IV_Rovers.Pages
                 //hämtar ut en lista på spelarens positioner
                 //som används för att kolla om spelaren redan har vald position
                 var playrPos = Service.GetPosition(PlayerID).ToList();
+                var selctedValues = new List<int>();
 
 
                 //loopar igenom alla kryssrutor 
@@ -69,11 +70,6 @@ namespace IV_Rovers.Pages
                     var position = new Position();
                     position.PlTypeID = int.Parse(checkBoxList.Items[i].Value);
                     position.PlayerID = player.PlayerID;
-
-                    /* if (!checkBoxList.Items[i].Selected)
-                     {
-                         Service.DeletePosition(position);
-                     }*/
 
                     if (!checkBoxList.Items[i].Selected)
                     {
@@ -88,20 +84,16 @@ namespace IV_Rovers.Pages
 
                     else
                     {
-                               
-                                Service.SavePosition(position);
-                            
-
-                        }
+                            Service.SavePosition(position);
                     }
-                
+                }
 
                 Page.SetTempData("SuccessMessage", "The player was updated!");
                 Response.RedirectToRoute("Details", new { id = PlayerID });
                 Context.ApplicationInstance.CompleteRequest();
-            }
-        }
-
+                }
+                }
+            
         public IEnumerable<PlayerType> PlayerFormView_GetItem()
         {
             return Service.GetPlayerTypes();
@@ -109,7 +101,7 @@ namespace IV_Rovers.Pages
 
         protected void UpdatePosition_ServerValidate(object source, ServerValidateEventArgs args)
         {
-            var checkBoxList = FormView1.FindControl("UpdatePosition") as CheckBoxList;
+            var checkBoxList = FormView1.FindControl("CheckBoxList") as CheckBoxList;
 
             var checkboxHasValue = checkBoxList.SelectedItem;
 
@@ -129,13 +121,13 @@ namespace IV_Rovers.Pages
             var checkBoxes = sender as CheckBoxList;
             var playrPos = Service.GetPosition(PlayerID).ToList();
 
-            foreach (var chexkboxes in checkBoxes.Items.Cast<ListItem>())
+            foreach (var checkbox in checkBoxes.Items.Cast<ListItem>())
             {
                 for (int x = 0; x < playrPos.Count; x++)
                 {
-                    if (playrPos[x].PlTypeID.ToString() == chexkboxes.Value)
+                    if (playrPos[x].PlTypeID.ToString() == checkbox.Value)
                     {
-                        chexkboxes.Selected = true;
+                        checkbox.Selected = true;
                     }
                 }
             }

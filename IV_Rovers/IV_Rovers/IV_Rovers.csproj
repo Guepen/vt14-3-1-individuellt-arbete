@@ -60,6 +60,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Style.css" />
     <Content Include="Global.asax" />
     <Content Include="Pages\DeletePlayer.aspx" />
     <Content Include="Pages\EditPlayer.aspx" />

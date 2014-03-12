@@ -1,0 +1,97 @@
+﻿body {
+    margin-left: auto;
+    width: 75%;
+    font-style:oblique;
+    background:url(https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT2dY044MCLtRldoevh_8KKDd1-5xk12RTgqsROrJF1tkF1wLgHWA);
+    background-repeat:no-repeat;
+    background-size:cover;
+    
+}
+h1 {
+    margin-left:11%;
+    color:whitesmoke;
+}
+
+@-webkit-keyframes colors {
+    0% {
+        color: darkred;
+    }
+    50% {
+        color: red;
+    }
+    100% {
+        color: orange;
+    }
+}
+
+#Menu {
+    display:block;
+    background-color:whitesmoke;
+    margin:7px;
+    margin-left:200px;
+    width:140px;
+    border-radius:7px;
+    
+}
+#Menu a {
+    -webkit-animation: colors 5s linear infinite;
+     display:block;
+     height:20px;
+     width:140px;
+     border:1px solid red;
+     margin:auto;
+     text-decoration:none;
+     text-align:center;
+     color:whitesmoke;
+     background:blue;
+     padding-top:5px;
+     padding-bottom:5px;
+}
+
+#Menu a:hover {
+    -webkit-animation: colors 5s linear infinite;
+     display:block;
+     height:20px;
+     width:140px;
+     border:1px solid red;
+     margin:auto;
+     text-decoration:none;
+     text-align:center;
+     color:blue;
+     background:whitesmoke;
+     padding-top:5px;
+     padding-bottom:5px;
+}
+
+table, th, td {
+    border: 1px solid red;
+}
+
+table {
+    border-collapse: collapse;
+
+}
+
+
+tr {
+     background-color:whitesmoke;
+}
+
+tr:nth-child(2n) {
+    background-color:lightblue;
+}
+
+th {
+    font-size: 1.1em;
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: blue;
+    color: #ffffff;
+}
+
+td, th {
+    font-size: 1em;
+    border: 1px solid red;
+    padding: 3px 7px 2px 7px;
+}

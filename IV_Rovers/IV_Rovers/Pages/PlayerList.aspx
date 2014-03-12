@@ -6,7 +6,10 @@
         <asp:Literal ID="SuccessLiteral" Visible="false" runat="server"></asp:Literal>
     </asp:Panel>
 
-    <asp:HyperLink runat="server" Text="New Player" NavigateUrl="<%$ RouteUrl:routename=InsertPlayer %>"/>
+    <div id="Menu">
+        <asp:HyperLink runat="server" Text="New Player" NavigateUrl="<%$ RouteUrl:routename=InsertPlayer %>" />
+
+    </div>
     <asp:ValidationSummary ID="ValidationSummary2" runat="server" ValidationGroup="Insert" />
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="" />
     <asp:ListView ID="PlayerListView" runat="server"
@@ -16,7 +19,7 @@
         DeleteMethod="PlayerListView_DeleteItem"
         DataKeyNames="PlayerID">
         <LayoutTemplate>
-            <table class="Table">
+            <table id="Table">
                 <tr>
                     <th>Firstname
                     </th>
@@ -28,13 +31,16 @@
                     </th>
                     <th>Shirtnumber
                     </th>
+                    <th>
+                        Deatils
+                    </th>
                 </tr>
                 <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
             </table>
         </LayoutTemplate>
         <ItemTemplate>
             <tr>
-                <td>
+                <td class="alt">
                     <%#: Item.FName %>
                 </td>
                 <td>
@@ -49,6 +55,7 @@
                 <td>
                     <%#: Item.ShirtNr %>
                 </td>
+      
                 <td>
                     <asp:HyperLink  Text="More Information" runat="server" NavigateUrl='<%# GetRouteUrl("Details", new { id = Item.PlayerID})%>'/>
                 </td>

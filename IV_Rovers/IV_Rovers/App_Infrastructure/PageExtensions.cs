@@ -12,10 +12,7 @@ namespace IV_Rovers
             return value;
         }
 
-        public static object PeekTempData(this Page page, string key)
-        {
-            return page.Session[key];
-        }
+       
 
         public static void SetTempData(this Page page, string key, object value)
         {

@@ -64,7 +64,7 @@ namespace IV_Rovers.Pages
             return Service.GetPlayerTypes();
         }
 
-        protected void CheckboxValidator_ServerValidate(object source, ServerValidateEventArgs args)
+        protected void InsertPosition_ServerValidate(object source, ServerValidateEventArgs args)
         {
             var checkBoxList = PlayerFormView.FindControl("CheckBoxList") as CheckBoxList;
 
