@@ -2,6 +2,10 @@
 
 
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:Panel runat="server">
+        <asp:Literal ID="SuccessLiteral" Visible="false" runat="server"></asp:Literal>
+    </asp:Panel>
+
     <asp:HyperLink runat="server" Text="New Player" NavigateUrl="<%$ RouteUrl:routename=InsertPlayer %>"/>
     <asp:ValidationSummary ID="ValidationSummary2" runat="server" ValidationGroup="Insert" />
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="" />

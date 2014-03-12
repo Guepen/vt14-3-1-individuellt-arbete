@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Shared/Site.Master" AutoEventWireup="true" CodeBehind="InsertPlayer.aspx.cs" Inherits="IV_Rovers.Pages.InsertPlayer" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Insert" />
+    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Insert" ShowModelStateErrors="false" />
     <asp:FormView ID="PlayerFormView" runat="server"
         ItemType="IV_Rovers.Model.Player"
         DefaultMode="Insert"

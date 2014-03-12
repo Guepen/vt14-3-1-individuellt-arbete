@@ -19,7 +19,8 @@ namespace IV_Rovers.Pages
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            SuccessLiteral.Text = Page.GetTempData("SuccessMessage") as string;
+            SuccessLiteral.Visible = !String.IsNullOrWhiteSpace(SuccessLiteral.Text);
         }
 
         // The id parameter should match the DataKeyNames value set on the control
@@ -34,10 +35,12 @@ namespace IV_Rovers.Pages
             try
             {
                 Service.DeletePlayer(id);
+                Page.SetTempData("SuccessMessage", "The player was deleted!");
                 Response.Redirect("~/Pages/PlayerList.aspx");
+               
                 //Bättre lösning men fungerar ej!
-                //Response.RedirectToRoute("PlayerList");
-                Context.ApplicationInstance.CompleteRequest();
+                //Response.RedirectToRoute("PlayerList", null);
+                //Context.ApplicationInstance.CompleteRequest();
             }
             catch
             {
@@ -52,21 +55,21 @@ namespace IV_Rovers.Pages
 
         protected void Player_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
-            /*var label = e.Item.FindControl("PositionLabel") as Label;
+            var label = e.Item.FindControl("PositionLabel") as Label;
             if (label != null)
             {
                 // Typomvandlar e.Item.DataItem så att primärnyckelns värde kan hämtas och...
                 var position = (Position)e.Item.DataItem;
    
                 label.Text = Service.GetPlayerTypeByID(position.PlTypeID).PlType;
-            */
+            
 
-            var position = e.Item.DataItem as Position;
+            /*var position = e.Item.DataItem as Position;
             if (position != null)
             {
                 var playerType = Service.GetPlayerTypeByID(position.PlTypeID);
                 var label = e.Item.FindControl("PositionLabel") as Label;
-                label.Text = playerType.PlType;
+                label.Text = playerType.PlType;*/
             }
 	
             }

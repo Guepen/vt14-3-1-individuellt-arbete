@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Shared/Site.Master" AutoEventWireup="true" CodeBehind="EditPlayer.aspx.cs" Inherits="IV_Rovers.Pages.Edit" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:Literal ID="PositionExists" Visible="false" runat="server"></asp:Literal>
     <asp:FormView ID="FormView1" runat="server"
         SelectMethod="FormView1_GetItem"
         ItemType="IV_Rovers.Model.Player"

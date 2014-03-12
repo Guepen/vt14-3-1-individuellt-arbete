@@ -19,7 +19,8 @@ namespace IV_Rovers.Pages
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            var FirstNameBox = PlayerFormView.FindControl("FName") as TextBox;
+            FirstNameBox.Focus();
         }
 
         public void PlayerFormView_InsertItem(Player player)
@@ -42,6 +43,8 @@ namespace IV_Rovers.Pages
                             Service.SavePosition(position);
                         }
                     }
+
+                    Page.SetTempData("SuccessMessage", "The player was inserted!");
                     Response.RedirectToRoute("Details", new { id = player.PlayerID });
                     Context.ApplicationInstance.CompleteRequest();
 
