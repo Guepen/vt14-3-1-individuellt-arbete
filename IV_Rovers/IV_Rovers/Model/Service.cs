@@ -54,7 +54,6 @@ namespace IV_Rovers.Model
         public void SavePlayer(Player player)
         {
             ICollection<ValidationResult> validationResults;
-
             if (!player.ValidatePlayer(out validationResults))
             {
                 var ex = new ValidationException("Objektet klarade inte valideringen.");

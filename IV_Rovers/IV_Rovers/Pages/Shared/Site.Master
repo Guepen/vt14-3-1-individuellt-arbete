@@ -6,10 +6,10 @@
 <head runat="server">
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
-         <h1>Blackburn Rovers</h1>
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    <h1>Blackburn Rovers</h1>
     <form id="form1" runat="server">
     <div>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

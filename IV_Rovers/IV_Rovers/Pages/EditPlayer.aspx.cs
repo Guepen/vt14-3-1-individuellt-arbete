@@ -13,6 +13,7 @@ namespace IV_Rovers.Pages
     public partial class Edit : System.Web.UI.Page
     {
         private Service _service;
+        private int PlayerID;
 
         private Service Service
         {
@@ -27,6 +28,7 @@ namespace IV_Rovers.Pages
         {
             try
             {
+                PlayerID = id;
                 return Service.GetPlayerByID(id);
             }
             catch
@@ -86,7 +88,7 @@ namespace IV_Rovers.Pages
 
                     else
                     {
-                                Service.DeletePosition(position);
+                               
                                 Service.SavePosition(position);
                             
 
@@ -103,6 +105,40 @@ namespace IV_Rovers.Pages
         public IEnumerable<PlayerType> PlayerFormView_GetItem()
         {
             return Service.GetPlayerTypes();
+        }
+
+        protected void UpdatePosition_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            var checkBoxList = FormView1.FindControl("UpdatePosition") as CheckBoxList;
+
+            var checkboxHasValue = checkBoxList.SelectedItem;
+
+            if (checkboxHasValue != null)
+            {
+                args.IsValid = true;
+            }
+
+            else
+            {
+                args.IsValid = false;
+            }
+        }
+
+        protected void CheckBoxList_DataBound(object sender, EventArgs e)
+        {
+            var checkBoxes = sender as CheckBoxList;
+            var playrPos = Service.GetPosition(PlayerID).ToList();
+
+            foreach (var chexkboxes in checkBoxes.Items.Cast<ListItem>())
+            {
+                for (int x = 0; x < playrPos.Count; x++)
+                {
+                    if (playrPos[x].PlTypeID.ToString() == chexkboxes.Value)
+                    {
+                        chexkboxes.Selected = true;
+                    }
+                }
+            }
         }
     }
 }
