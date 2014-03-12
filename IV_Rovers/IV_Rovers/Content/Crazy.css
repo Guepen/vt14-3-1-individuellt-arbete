@@ -98,13 +98,11 @@ table {
 
 tr {
      background-color:whitesmoke;
-     -webkit-animation: fontbulger 5s linear infinite;
      -webkit-animation: infinite-spinning 6s linear infinite
 }
 
 tr:nth-child(2n) {
     background-color:lightblue;
-    -webkit-animation: fontbulger 5s reverse infinite;
     -webkit-animation: infinite-spinning 6s linear infinite
    
 }
@@ -150,7 +148,7 @@ td, th {
 }
 
 input {
-    -webkit-animation: resize 5s linear infinite;
+    -webkit-animation: resize 3s linear infinite;
     display:block;
 }
 
@@ -195,14 +193,15 @@ label {
 
 @-webkit-keyframes resize {
   0% {
-    padding: 0;
+    padding: 3px 30px;
+    background-color:inherit;
   }
   50% {
     padding: 10px 20px;
     background-color:darkcyan;
   }
   100% {
-    padding: 3px 60px;
+    padding: 3px 30px;
     background-color:lightgoldenrodyellow;
   }
 }
