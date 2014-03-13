@@ -20,11 +20,11 @@ namespace IV_Rovers.Pages.Shared
                 {
                     Literal1.Text = layout;
                 }
-                else
+                /*else
                 {
                     const string style = "<LINK href=\"../../Content/Style.css\" type=\"text/css\" rel=\"stylesheet\">";
                     Literal1.Text = style;
-                }
+                }*/
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
