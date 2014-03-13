@@ -53,7 +53,7 @@
             <h2>Position</h2>
               <asp:CheckBoxList ID="CheckBoxList" runat="server"  ItemType="IV_Rovers.Model.PlayerType" DataValueField="PlTypeID" DataTextField="PlType" SelectMethod="PlayerFormView_GetItem"  RepeatColumns="5" RepeatLayout="Table" />
               <asp:CustomValidator ID="InsertPosition" runat="server" ValidationGroup="Insert" OnServerValidate="InsertPosition_ServerValidate" ErrorMessage="You must Select atleast one position!" ></asp:CustomValidator>
-            <div>
+            <div id="NewPlayer">
                 <asp:LinkButton ID="LinkButton3" runat="server" CommandName="Insert" Text="Lägg till" ValidationGroup="Insert" />
                 <asp:HyperLink ID="HyperLink3" runat="server" Text="Avbryt" NavigateUrl='<%# GetRouteUrl("PlayerList", null)%>' />
             </div>

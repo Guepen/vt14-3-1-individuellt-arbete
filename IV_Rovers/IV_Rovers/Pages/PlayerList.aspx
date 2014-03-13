@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Shared/Site.Master" AutoEventWireup="true" CodeBehind="PlayerList.aspx.cs" Inherits="IV_Rovers.Pages.PlayerList" %>
 
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div id="Menu">
+    <div id="NewPlayer">
         <asp:HyperLink runat="server" Text="New Player" NavigateUrl="<%$ RouteUrl:routename=InsertPlayer %>" />
       
     </div>

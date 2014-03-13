@@ -22,8 +22,36 @@ h1, h2 {
     margin-left:200px;
     width:140px;
     border-radius:7px;
+    margin-right:65%;
+    margin-top:-6%;
     
 }
+
+#NewPlayer {
+    display:block;
+    background-color:whitesmoke;
+    margin:7px;
+    margin-left:200px;
+    width:140px;
+    border-radius:7px;
+}
+
+ul {
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+ul li {
+        color: red;
+        font-size: 1.5em;
+        font-weight: normal;
+        line-height: 1.5em;
+        list-style:none;
+        margin: 0 0 0 3px;
+        padding: 3px 0;
+    }
 
 label {
     color: whitesmoke;
@@ -32,7 +60,7 @@ label {
 ul{
     color:red;
 }
-#Menu a {
+#Menu a, #NewPlayer a {
      display:block;
      height:20px;
      width:140px;
@@ -46,7 +74,7 @@ ul{
      padding-bottom:5px;
 }
 
-#Menu a:hover {
+#Menu a:hover, #NewPlayer a:hover {
      display:block;
      height:20px;
      width:140px;
@@ -68,19 +96,19 @@ table, th, td {
 }
 
 table {
-    border-collapse: collapse;
     
+    color:black;
 
 }
 
 
 tr {
-    background-color: lightgreen;
+    background-color:lightgoldenrodyellow;
     
 }
 
 tr:nth-child(2n) {
-    background-color:lightblue;
+    background-color:forestgreen;
     
 }
 
