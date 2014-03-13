@@ -12,18 +12,19 @@ namespace IV_Rovers.Pages.Shared
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SuccessLiteral.Text = Page.GetTempData("successMessage") as string;
-            SuccessPanel.Visible = !String.IsNullOrWhiteSpace(SuccessLiteral.Text);
-            var layout = Page.GetLayOut("Layout") as string;
-            if (layout != null)
-            {
-                Literal1.Text = layout;
-            }
-            else 
-            {
-                const string style = "<LINK href=\"../../Content/Style.css\" type=\"text/css\" rel=\"stylesheet\">";
-                Literal1.Text = style;
-            }
+           
+               SuccessLiteral.Text = Page.GetTempData("successMessage") as string;
+                SuccessPanel.Visible = !String.IsNullOrWhiteSpace(SuccessLiteral.Text);
+                var layout = Page.GetLayOut("Layout") as string;
+                if (layout != null)
+                {
+                    Literal1.Text = layout;
+                }
+                else
+                {
+                    const string style = "<LINK href=\"../../Content/Style.css\" type=\"text/css\" rel=\"stylesheet\">";
+                    Literal1.Text = style;
+                }
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
