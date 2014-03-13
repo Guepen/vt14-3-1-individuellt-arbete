@@ -10,20 +10,19 @@ namespace IV_Rovers.Model
     public class Service
     {
         private PlayerDAL _playerDAL;
+        private PlayerTypeDAL _playerTypeDAL;
+        private PositionDAL _positionDAL;
 
+        //Lazy initialision, objekten skapas först när de behövs 
         private PlayerDAL PlayerDAL
         {
             get { return _playerDAL ?? (_playerDAL = new PlayerDAL()); }
         }
 
-        private PlayerTypeDAL _playerTypeDAL;
-
         private PlayerTypeDAL PlayerTypeDAL
         {
             get { return _playerTypeDAL ?? (_playerTypeDAL = new PlayerTypeDAL()); }
         }
-
-        private PositionDAL _positionDAL;
 
         private PositionDAL PositionDAL
         {
@@ -32,10 +31,10 @@ namespace IV_Rovers.Model
 
         public void DeletePlayer(Player player)
         {
-            DeletePlayer(player.PlayerID);
+            DeletePlayerID(player.PlayerID);
         }
 
-        public void DeletePlayer(int playerID)
+        public void DeletePlayerID(int playerID)
         {
             PlayerDAL.DeletePlayer(playerID);
         }
@@ -74,12 +73,25 @@ namespace IV_Rovers.Model
 
         public IEnumerable<PlayerType> GetPlayerTypes()
         {
-            return PlayerTypeDAL.GetPlayerTypes();
+            var playerTypes = HttpContext.Current.Cache["PlayerTypes"] as IEnumerable<PlayerType>;
+
+            if (playerTypes == null)
+            {
+                playerTypes = PlayerTypeDAL.GetPlayerTypes();
+
+                HttpContext.Current.Cache.Insert("PlayerTypes", playerTypes, null, DateTime.Now.AddMinutes(15), TimeSpan.Zero);
+            }
+
+            return playerTypes;
+        }
+
+        public PlayerType GetPlayerTypeByID(int PlTypeID)
+        {
+            return PlayerTypeDAL.GetPlayerTypeByID(PlTypeID);
         }
 
         public void SavePosition(Position position)
-        {
-            
+        { 
             PositionDAL.InsertPosition(position);
         }
 
@@ -93,9 +105,5 @@ namespace IV_Rovers.Model
             return PositionDAL.GetPlayerPosition(id);
         }
 
-        public PlayerType GetPlayerTypeByID(int PlTypeID)
-        {
-            return PlayerTypeDAL.GetPlayerTypeByID(PlTypeID);
-        }
     }
 }

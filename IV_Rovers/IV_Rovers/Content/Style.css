@@ -5,11 +5,11 @@
     background:url(https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT2dY044MCLtRldoevh_8KKDd1-5xk12RTgqsROrJF1tkF1wLgHWA);
     background-repeat:no-repeat;
     background-size:cover;
-    
+    z-index:0;
 }
-h1 {
+h1, h2 {
     margin-left:11%;
-    color:whitesmoke;
+    color :whitesmoke;
 }
 #Edit {
     color: whitesmoke;
@@ -23,6 +23,10 @@ h1 {
     width:140px;
     border-radius:7px;
     
+}
+
+label {
+    color: whitesmoke;
 }
 
 ul{
@@ -57,17 +61,22 @@ ul{
 }
 
 table, th, td {
-    border: 1px solid red;
+      border: 1px solid red;
+      color:black;
+      padding-top: 5px;
+      z-index:1;
 }
 
 table {
     border-collapse: collapse;
+    
 
 }
 
 
 tr {
-    background-color: whitesmoke;
+    background-color: lightgreen;
+    
 }
 
 tr:nth-child(2n) {
@@ -90,3 +99,46 @@ td, th {
     padding: 3px 7px 2px 7px;
 }
 
+table a {
+    text-decoration:none;
+    color:blue;
+}
+
+    table a:hover {
+        color:orangered;
+    }
+
+.icon-ok {
+    border: solid 1px #90ac13;
+    background: #eef4d3;
+    color: #6b800d;
+    font-weight: bold;
+    text-align: left;
+    text-align:center;
+    min-height: 42px;
+    line-height: 42px;
+    vertical-align: middle;
+    margin-bottom: .5em;
+    width:100px;
+}
+
+#SuccessPanel {
+    width: 300px;
+}
+
+div {
+    color:whitesmoke;
+}
+
+input[type=text] {padding:5px; border:2px solid #ccc; 
+-webkit-border-radius: 5px;
+border-radius: 5px;
+color: blue;
+}
+
+input[type=text]:focus {border-color:#333; }
+
+input[type=submit] {padding:5px 15px; background:#ccc; border:0 none;
+cursor:pointer;
+-webkit-border-radius: 5px;
+border-radius: 5px; }

@@ -12,6 +12,8 @@ namespace IV_Rovers.Pages.Shared
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            SuccessLiteral.Text = Page.GetTempData("successMessage") as string;
+            SuccessPanel.Visible = !String.IsNullOrWhiteSpace(SuccessLiteral.Text);
             var layout = Page.GetLayOut("Layout") as string;
             if (layout != null)
             {

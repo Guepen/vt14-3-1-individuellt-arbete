@@ -1,17 +1,19 @@
 ﻿body {
     margin-left: auto;
     width: 75%;
-    font-style:oblique;
-    background:url(https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT2dY044MCLtRldoevh_8KKDd1-5xk12RTgqsROrJF1tkF1wLgHWA);
-    background-repeat:no-repeat;
-    background-size:cover;
+    font-style: oblique;
+    background: url(https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcT2dY044MCLtRldoevh_8KKDd1-5xk12RTgqsROrJF1tkF1wLgHWA);
+    background-repeat: no-repeat;
+    background-size: cover;
     backface-visibility: hidden;
 }
+
 h1, h2 {
-    margin-left:11%;
-    color:whitesmoke;
-    -webkit-animation: infinite-spinning 16s alternate infinite;
+    margin-left: 11%;
+    color: whitesmoke;
+    -webkit-animation: move 10s steps(10) infinite alternate;
 }
+
 #Edit {
     color: whitesmoke;
 }
@@ -20,68 +22,70 @@ h1, h2 {
     0% {
         color: darkcyan;
     }
+
     50% {
-        color:  WindowFrame;
+        color: WindowFrame;
     }
+
     100% {
         color: Window;
     }
 }
 
 @-webkit-keyframes fontbulger {
-        0%, 100% {
-                font-size: 3px;
-        }
-        50% {
-                font-size: 20px;
-        }
+    0%, 100% {
+        font-size: 3px;
+    }
+
+    50% {
+        font-size: 20px;
+    }
 }
 
 @-webkit-keyframes infinite-spinning {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-  }
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+    }
 }
 
 #Menu {
-    display:block;
-    background-color:whitesmoke;
-    margin:7px;
-    width:140px;
-    border-radius:7px;
-   
-    
-}
-#Menu a {
-     display:block;
-     height:20px;
-     
-     border:1px solid red;
-     margin:auto;
-     text-decoration:none;
-     text-align:center;
-     color:whitesmoke;
-     background:blue;
-     padding-top:5px;
-     padding-bottom:5px;
+    display: block;
+    background-color: whitesmoke;
+    margin: 7px;
+    width: 140px;
+    border-radius: 7px;
 }
 
-#Menu a:hover {
-     display:block;
-     height:20px;
-     border:1px solid red;
-     margin:auto;
-     text-decoration:none;
-     text-align:center;
-     color:blue;
-     background:whitesmoke;
-     padding-top:5px;
-     padding-bottom:5px;
-     opacity:1;
-}
+    #Menu a {
+        display: block;
+        height: 20px;
+        border: 1px solid red;
+        margin: auto;
+        text-decoration: none;
+        text-align: center;
+        color: whitesmoke;
+        background: blue;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+        #Menu a:hover {
+            display: block;
+            height: 20px;
+            border: 1px solid red;
+            margin: auto;
+            text-decoration: none;
+            text-align: center;
+            color: blue;
+            background: whitesmoke;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            opacity: 1;
+        }
 
 table, th, td {
     border: 1px solid red;
@@ -93,15 +97,14 @@ table {
 
 
 tr {
-     background-color:whitesmoke;
-     -webkit-animation: infinite-spinning 6s linear infinite
+    background-color: whitesmoke;
+    -webkit-animation: infinite-spinning 6s linear infinite;
 }
 
-tr:nth-child(2n) {
-    background-color:lightblue;
-    -webkit-animation: infinite-spinning 6s linear infinite
-   
-}
+    tr:nth-child(2n) {
+        background-color: lightblue;
+        -webkit-animation: infinite-spinning 6s linear infinite;
+    }
 
 th {
     font-size: 1.1em;
@@ -113,107 +116,190 @@ th {
     -webkit-animation: colors 5s linear infinite;
 }
 
+ul {
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+ul li {
+        color: red;
+        font-size: 1.5em;
+        font-weight: normal;
+        line-height: 1.5em;
+        list-style:none;
+        margin: 0 0 0 3px;
+        padding: 3px 0;
+    }
+
 td, th {
     font-size: 1em;
     border: 1px solid red;
     padding: 3px 7px 2px 7px;
 }
 
-#playground{
-    float:left;
+#playground {
+    float: left;
     position: relative;
     height: 400px;
     width: 100%;
-    margin-left:-20%;
+    margin-left: -20%;
 }
 
-#ball{
+#ball {
     height: 20px;
     width: 20px;
     background: red;
     position: absolute;
     border-radius: 10px;
- 
- 
-   -webkit-animation: horizontal 3.2s, vertical 0.9s;
-   -webkit-animation-timing-function: linear;
-   -webkit-animation-iteration-count: infinite;    
- 
-   -moz-animation: horizontal 3.2s, vertical 0.9s;
-   -moz-animation-timing-function: linear;
-   -moz-animation-iteration-count: infinite;    
+    -webkit-animation: horizontal 3.2s, vertical 0.9s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation: horizontal 3.2s, vertical 0.9s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
 }
 
 input {
     -webkit-animation: resize 3s linear infinite;
-    display:block;
+    display: block;
 }
 
 #CrazyButton {
-    float:left;
-    position:fixed;
-    margin-left:-23%
+    float: left;
+    position: fixed;
+    margin-left: -23%;
 }
 
 #BoringButton {
-    float:right;
+    float: right;
 }
 
 
 label {
     color: whitesmoke;
 }
-#ValidationSummary2, #ValidationSummary1 {
-    color:red;
-}
 
-#BoringButton {
-   -webkit-animation: dropAnimation 10s infinite;
+#ValidationSummary2, #ValidationSummary1 {
+    color: red;
 }
 
 @-webkit-keyframes vertical {
-    0% { top: 0;}
-    50% { top: 100%;}
-    100%{top:0;}
+    0% {
+        top: 0;
+    }
+
+    50% {
+        top: 100%;
+    }
+
+    100% {
+        top: 0;
+    }
 }
+
 @-webkit-keyframes horizontal {
-    0% { left: 0;}
-    50% { left: 100%;}
-    100%{left:0;}
+    0% {
+        left: 0;
+    }
+
+    50% {
+        left: 100%;
+    }
+
+    100% {
+        left: 0;
+    }
 }
+
 @-moz-keyframes vertical {
-    0% { top: 0;}
-    50% { top: 100%;}
-    100%{top:0;}
+    0% {
+        top: 0;
+    }
+
+    50% {
+        top: 100%;
+    }
+
+    100% {
+        top: 0;
+    }
 }
+
 @-moz-keyframes horizontal {
-    0% { left: 0;}
-    50% { left: 100%;}
-    100%{left:0;}
+    0% {
+        left: 0;
+    }
+
+    50% {
+        left: 100%;
+    }
+
+    100% {
+        left: 0;
+    }
 }
 
 @-webkit-keyframes resize {
-  0% {
-    padding: 3px 30px;
-    background-color:inherit;
-  }
-  50% {
-    padding: 10px 20px;
-    background-color:darkcyan;
-  }
-  100% {
-    padding: 3px 30px;
-    background-color:lightgoldenrodyellow;
-  }
+    0% {
+        padding: 3px 30px;
+        background-color: inherit;
+    }
+
+    50% {
+        padding: 10px 20px;
+        background-color: darkcyan;
+    }
+
+    100% {
+        padding: 3px 30px;
+        background-color: lightgoldenrodyellow;
+    }
 }
 
-@-webkit-keyframes dropAnimation{
-  0%{ opacity: 1;}
-  17%{  opacity:0 }
-  15%{  opacity:0 }
-   25%{  opacity:0 }
-    35%{  opacity:0 }
-     55%{  opacity:0 }
-    99.9% { opacity:0 }
-  100%{ opacity: 1; }
+@-webkit-keyframes dropAnimation {
+    0% {
+        opacity: 1;
+    }
+
+    17% {
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    35% {
+        opacity: 0;
+    }
+
+    55% {
+        opacity: 0;
+    }
+
+    99.9% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes move {
+    from {
+        top: 0;
+        left: 0;
+    }
+
+    to {
+        top: 30px;
+        left: 80px;
+    }
 }

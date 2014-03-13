@@ -61,9 +61,7 @@ namespace IV_Rovers.Pages
                 //hämtar ut en lista på spelarens positioner
                 //som används för att kolla om spelaren redan har vald position
                 var playrPos = Service.GetPosition(PlayerID).ToList();
-                var selctedValues = new List<int>();
-
-
+               
                 //loopar igenom alla kryssrutor 
                 for (int i = 0; i < checkBoxList.Items.Count; i++)
                 {
@@ -88,7 +86,7 @@ namespace IV_Rovers.Pages
                     }
                 }
 
-                Page.SetTempData("SuccessMessage", "The player was updated!");
+                Page.SetTempData("successMessage", "The player was updated!");
                 Response.RedirectToRoute("Details", new { id = PlayerID });
                 Context.ApplicationInstance.CompleteRequest();
                 }

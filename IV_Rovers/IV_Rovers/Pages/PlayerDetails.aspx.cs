@@ -19,8 +19,7 @@ namespace IV_Rovers.Pages
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            SuccessLiteral.Text = Page.GetTempData("SuccessMessage") as string;
-            SuccessLiteral.Visible = !String.IsNullOrWhiteSpace(SuccessLiteral.Text);
+
         }
 
         // The id parameter should match the DataKeyNames value set on the control
@@ -34,12 +33,12 @@ namespace IV_Rovers.Pages
         {
             try
             {
-                Service.DeletePlayer(id);
-                Page.SetTempData("SuccessMessage", "The player was deleted!");
+                Service.DeletePlayerID(id);
+                Page.SetTempData("successMessage", "The player was deleted!");
                 Response.Redirect("~/Pages/PlayerList.aspx");
                
                 //Bättre lösning men fungerar ej!
-                //Response.RedirectToRoute("PlayerList", null);
+               // Response.RedirectToRoute("PlayerList", null);
                 //Context.ApplicationInstance.CompleteRequest();
             }
             catch

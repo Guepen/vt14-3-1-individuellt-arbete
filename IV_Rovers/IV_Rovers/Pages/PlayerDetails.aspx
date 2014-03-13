@@ -1,8 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Shared/Site.Master" AutoEventWireup="true" CodeBehind="PlayerDetails.aspx.cs" Inherits="IV_Rovers.Pages.PlayerDetails" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Panel runat="server">
-        <asp:Literal ID="SuccessLiteral" Visible="false" runat="server"></asp:Literal></asp:Panel>
     <asp:FormView ID="FormView1" runat="server"
         ItemType="IV_Rovers.Model.Player"
         SelectMethod="FormView1_GetItem"

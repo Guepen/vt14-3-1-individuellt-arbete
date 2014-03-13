@@ -12,6 +12,9 @@
 </head>
 <body>
     <h1>Blackburn Rovers</h1>
+    <asp:Panel ID="SuccessPanel" runat="server" CssClass="icon-ok" Visible="false">
+        <asp:Literal ID="SuccessLiteral" runat="server"></asp:Literal>
+    </asp:Panel>
     
     
     <form id="form1" runat="server">
@@ -22,8 +25,8 @@
         </asp:ContentPlaceHolder>
     </div>
     </form>
-</body>
     <div id='playground'>
     <div id='ball'></div>
     </div>
+</body>
 </html>

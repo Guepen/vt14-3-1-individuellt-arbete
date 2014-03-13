@@ -14,6 +14,7 @@ namespace IV_Rovers
             routes.MapPageRoute("Details", "Player/{id}", "~/Pages/PlayerDetails.aspx");
             routes.MapPageRoute("Edit", "Player/Edit/{id}", "~/Pages/EditPlayer.aspx");
             routes.MapPageRoute("Delete", "Player/Delete/{id}", "~/Pages/DeletePlayer.aspx");
+            routes.MapPageRoute("Error", "Error2", "~/Pages/Error.aspx");
         }
     }
 }

@@ -8,7 +8,6 @@ namespace IV_Rovers
         {
             var value = page.Session[key];
             page.Session.Remove(key);
-
             return value;
         }
 

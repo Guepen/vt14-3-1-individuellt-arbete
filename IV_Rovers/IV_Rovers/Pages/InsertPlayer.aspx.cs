@@ -44,7 +44,7 @@ namespace IV_Rovers.Pages
                         }
                     }
 
-                    Page.SetTempData("SuccessMessage", "The player was inserted!");
+                    Page.SetTempData("successMessage", "The player was inserted!");
                     Response.RedirectToRoute("Details", new { id = player.PlayerID });
                     Context.ApplicationInstance.CompleteRequest();
 
