@@ -21,9 +21,9 @@
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
     </div>
-        <div id='playground'>
-    <div id='ball'></div>
-    </div>
     </form>
 </body>
+    <div id='playground'>
+    <div id='ball'></div>
+    </div>
 </html>

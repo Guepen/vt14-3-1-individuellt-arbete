@@ -7,10 +7,10 @@
     background-size:cover;
     
 }
-h1 {
+h1, h2 {
     margin-left:11%;
     color:whitesmoke;
-    -webkit-animation: infinite-spinning 6s linear infinite
+    -webkit-animation: infinite-spinning 16s alternate infinite;
 }
 #Edit {
     color: whitesmoke;
@@ -52,10 +52,10 @@ h1 {
     margin:7px;
     width:140px;
     border-radius:7px;
+   
     
 }
 #Menu a {
-    -webkit-animation: colors 5s reverse reverse;
      display:block;
      height:20px;
      
@@ -70,11 +70,6 @@ h1 {
 }
 
 #Menu a:hover {
-    -webkit-animation: resize;
-    animation-duration: 1s;
-    animation-iteration-count: 4;
-    animation-direction: alternate;
-    animation-timing-function: ease-in-out;
      display:block;
      height:20px;
      border:1px solid red;
@@ -85,6 +80,7 @@ h1 {
      background:whitesmoke;
      padding-top:5px;
      padding-bottom:5px;
+     opacity:1;
 }
 
 table, th, td {
@@ -170,6 +166,12 @@ label {
     color:red;
 }
 
+#BoringButton {
+   -webkit-animation: dropAnimation 1.7s;
+   transform: rotate(90deg) translate(300px,0px);
+   opacity: 0;
+}
+
 @-webkit-keyframes vertical {
     0% { top: 0;}
     50% { top: 100%;}
@@ -204,4 +206,13 @@ label {
     padding: 3px 30px;
     background-color:lightgoldenrodyellow;
   }
+}
+
+@-webkit-keyframes dropAnimation{
+  0%{ transform: rotate(0deg); opacity: 1;}
+  20%{ transform: rotate(120deg) }
+  40%{ transform: rotate(80deg) }
+  60%{ transform: rotate(100deg) }
+  80%{ transform: rotate(90deg); opacity: 1; }
+  100%{ transform: rotate(90deg) translate(300px,0px); opacity: 0; }
 }
