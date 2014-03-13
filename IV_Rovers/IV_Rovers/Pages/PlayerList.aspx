@@ -9,8 +9,6 @@
         <asp:HyperLink runat="server" Text="New Player" NavigateUrl="<%$ RouteUrl:routename=InsertPlayer %>" />
       
     </div>
-    <asp:ValidationSummary ID="ValidationSummary2" runat="server" ValidationGroup="Insert" />
-    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="" />
     <asp:ListView ID="PlayerListView" runat="server"
         ItemType="IV_Rovers.Model.Player"
         SelectMethod="PlayerListView_GetData"
