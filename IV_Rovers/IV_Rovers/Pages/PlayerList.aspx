@@ -70,10 +70,6 @@
             </table>
         </EmptyDataTemplate>
     </asp:ListView>
-
-     <div id='playground'>
-    <div id='ball'></div>
-    </div>
 </asp:Content>
 
 
