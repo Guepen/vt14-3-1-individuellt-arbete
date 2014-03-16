@@ -9,7 +9,7 @@ namespace IV_Rovers.Model
     {
         public int PlayerID { get; set; }
 
-        public int PlTypeID { get; set; }
+        public byte PlTypeID { get; set; }
 
     }
 }

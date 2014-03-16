@@ -97,7 +97,7 @@ namespace IV_Rovers.Model
 
         public void DeletePosition(Position position)
         {
-            PositionDAL.Delete(position);
+            PositionDAL.DeletePosition(position);
         }
 
         public IEnumerable<Position> GetPosition(int id)

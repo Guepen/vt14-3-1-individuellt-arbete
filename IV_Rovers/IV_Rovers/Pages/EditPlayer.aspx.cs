@@ -66,7 +66,7 @@ namespace IV_Rovers.Pages
                 for (int i = 0; i < checkBoxList.Items.Count; i++)
                 {
                     var position = new Position();
-                    position.PlTypeID = int.Parse(checkBoxList.Items[i].Value);
+                    position.PlTypeID = byte.Parse(checkBoxList.Items[i].Value);
                     position.PlayerID = player.PlayerID;
 
                     if (!checkBoxList.Items[i].Selected)

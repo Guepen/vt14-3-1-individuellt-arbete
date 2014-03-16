@@ -19,10 +19,10 @@ namespace IV_Rovers.Model
         public string LName { get; set; }
 
         [Required(ErrorMessage = "You must add the players heigth!")]
-        public int Height { get; set; }
+        public byte Height { get; set; }
 
         [Required(ErrorMessage = "You must add the players weight!")]
-        public int Weight { get; set; }
+        public byte Weight { get; set; }
 
         [Required(ErrorMessage = "You must add the players shirtnumber!")]
         public byte ShirtNr { get; set; }

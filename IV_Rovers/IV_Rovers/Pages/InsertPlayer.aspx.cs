@@ -37,7 +37,7 @@ namespace IV_Rovers.Pages
                         if (checkBoxList.Items[i].Selected)
                         {
                             var position = new Position();
-                            position.PlTypeID = int.Parse(checkBoxList.Items[i].Value);
+                            position.PlTypeID = byte.Parse(checkBoxList.Items[i].Value);
                             position.PlayerID = player.PlayerID;
                             Service.SavePosition(position);
                         }
