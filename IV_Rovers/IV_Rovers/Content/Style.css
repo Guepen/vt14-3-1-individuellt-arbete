@@ -96,7 +96,7 @@ table, th, td {
 }
 
 table {
-    
+    border-collapse:collapse;
     color:black;
 
 }
@@ -104,12 +104,18 @@ table {
 
 tr {
     background-color:lightgoldenrodyellow;
-    
+}
+
+tr label {
+    color: forestgreen;
 }
 
 tr:nth-child(2n) {
     background-color:forestgreen;
-    
+}
+
+tr:nth-child(2n) label {
+    color: lightgoldenrodyellow;
 }
 
 th {

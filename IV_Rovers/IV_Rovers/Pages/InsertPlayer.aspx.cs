@@ -25,7 +25,7 @@ namespace IV_Rovers.Pages
         public void PlayerFormView_InsertItem(Player player)
         {
 
-            if (ModelState.IsValid)
+            if (TryUpdateModel(player))
             {
                 try
                 {

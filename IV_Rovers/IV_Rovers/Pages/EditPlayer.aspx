@@ -35,6 +35,8 @@
                     <asp:TextBox ID="Height" runat="server" Text='<%# BindItem.Height %>' MaxLength="3" />
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Längd måste anges"
                         ControlToValidate="Height" ValidationGroup="Update" Display="None"></asp:RequiredFieldValidator>
+                     <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Height must be integer" Operator="DataTypeCheck" 
+                         Type="Integer" ValidationGroup="Update" ControlToValidate="Height" Display="None"></asp:CompareValidator>
                 </div>
                 <div>
                     <label>Weight</label>
@@ -43,6 +45,8 @@
                     <asp:TextBox ID="Weight" runat="server" Text='<%# BindItem.Weight %>' MaxLength="3" />
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Vikt måste anges"
                         ControlToValidate="Weight" ValidationGroup="Update" Display="None"></asp:RequiredFieldValidator>
+                      <asp:CompareValidator ID="CompareValidator2" runat="server" ErrorMessage="Weight must be integer" Operator="DataTypeCheck" 
+                          Type="Integer" ValidationGroup="Update" ControlToValidate="Weight" Display="None"></asp:CompareValidator>
                 </div>
                 <div>
                     <label>Shirtnumber</label>
@@ -51,6 +55,8 @@
                     <asp:TextBox ID="ShirtNr" runat="server" Text='<%# BindItem.ShirtNr %>' MaxLength="3" />
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Tröjnummmer måste anges"
                         ControlToValidate="ShirtNr" ValidationGroup="Update" Display="None"></asp:RequiredFieldValidator>
+                    <asp:CompareValidator ID="CompareValidator3" runat="server" ErrorMessage="Shirtnumber must be integer" Operator="DataTypeCheck" 
+                          Type="Integer" ValidationGroup="Update" ControlToValidate="ShirtNr" Display="None"></asp:CompareValidator>
                 </div>
 
                 <asp:CheckBoxList ID="CheckBoxList" RepeatColumns="2" runat="server" ItemType="IV_Rovers.Model.PlayerType" DataValueField="PlTypeID" DataTextField="PlType" SelectMethod="PlayerFormView_GetItem" OnDataBound="CheckBoxList_DataBound"></asp:CheckBoxList>

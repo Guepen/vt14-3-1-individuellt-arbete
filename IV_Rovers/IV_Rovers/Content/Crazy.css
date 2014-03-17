@@ -18,6 +18,56 @@ h1, h2 {
     color: whitesmoke;
 }
 
+@-webkit-keyframes corners {
+    0% {
+        border-radius: 0;
+    }
+
+    100% {
+        border-radius: 100%;
+    }
+}
+
+#NewPlayer {
+    display:block;
+    background-color:whitesmoke;
+    margin:7px;
+    margin-left:200px;
+    width:140px;
+    -webkit-animation: corners 6s linear infinite alternate;
+}
+
+icon-ok {
+    border: solid 1px #90ac13;
+    background: #eef4d3;
+    color: #6b800d;
+    font-weight: bold;
+    text-align: left;
+    text-align:center;
+    min-height: 42px;
+    line-height: 42px;
+    vertical-align: middle;
+    margin-bottom: .5em;
+    width:100px;
+}
+
+#SuccessPanel {
+    width: 300px;
+}
+
+input[type=text] {padding:5px; border:2px solid #ccc; 
+-webkit-border-radius: 5px;
+border-radius: 5px;
+color: blue;
+}
+
+input[type=text]:focus {border-color:#333; }
+
+input[type=submit] {padding:5px 15px; background:#ccc; border:0 none;
+cursor:pointer;
+-webkit-border-radius: 5px;
+border-radius: 5px; }
+
 @-webkit-keyframes colors {
     0% {
         color: darkcyan;
@@ -52,15 +102,15 @@ h1, h2 {
     }
 }
 
-#Menu {
+#Menu, #NewPlayer {
     display: block;
-    background-color: whitesmoke;
+    background-color: blue;
     margin: 7px;
     width: 140px;
     border-radius: 7px;
 }
 
-    #Menu a {
+    #Menu a, #NewPlayer a {
         display: block;
         height: 20px;
         border: 1px solid red;
@@ -71,9 +121,10 @@ h1, h2 {
         background: blue;
         padding-top: 5px;
         padding-bottom: 5px;
+        -webkit-animation: corners 6s linear infinite alternate;
     }
 
-        #Menu a:hover {
+        #Menu a:hover, #NewPlayer a:hover {
             display: block;
             height: 20px;
             border: 1px solid red;
@@ -98,12 +149,18 @@ table {
 
 tr {
     background-color: whitesmoke;
+    color:cadetblue;
     -webkit-animation: infinite-spinning 6s linear infinite;
 }
 
     tr:nth-child(2n) {
         background-color: lightblue;
-        -webkit-animation: infinite-spinning 6s linear infinite;
+        color: whitesmoke;
+        -webkit-animation: infinite-spinning 6s ease-in-out infinite;
+    }
+
+    tr:nth-child(3n) {
+        -webkit-animation: infinite-spinning 6s ease-in-out infinite reverse;
     }
 
 th {
@@ -303,4 +360,8 @@ label {
         top: 30px;
         left: 80px;
     }
+}
+
+div {
+    color: white;
 }

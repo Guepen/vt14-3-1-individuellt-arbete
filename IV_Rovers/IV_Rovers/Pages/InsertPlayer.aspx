@@ -33,6 +33,8 @@
                 <asp:TextBox ID="Height" runat="server" Text='<%# BindItem.Height %>' MaxLength="3" />
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Längd måste anges"
                     ControlToValidate="Height" ValidationGroup="Insert" Display="None"></asp:RequiredFieldValidator>
+                <asp:CompareValidator ID="CompareValidator3" runat="server" ErrorMessage="Height must be integer" Operator="DataTypeCheck" 
+                          Type="Integer" ValidationGroup="Insert" ControlToValidate="Height" Display="None"></asp:CompareValidator>
             </div>
             <div>
                 <label>Weight</label>
@@ -41,6 +43,8 @@
                 <asp:TextBox ID="Weight" runat="server" Text='<%# BindItem.Weight %>' MaxLength="3" />
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Vikt måste anges"
                     ControlToValidate="ShirtNr" ValidationGroup="Insert" Display="None"></asp:RequiredFieldValidator>
+                  <asp:CompareValidator ID="CompareValidator2" runat="server" ErrorMessage=" Weigth must be integer" Operator="DataTypeCheck" 
+                          Type="Integer" ValidationGroup="Insert" ControlToValidate="Weight" Display="None"></asp:CompareValidator>
             </div>
             <div>
                 <label>Shirtnumber</label>
@@ -49,6 +53,8 @@
                 <asp:TextBox ID="ShirtNr" runat="server" Text='<%# BindItem.ShirtNr %>' MaxLength="3" />
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Tröjnummmer måste anges"
                     ControlToValidate="ShirtNr" ValidationGroup="Insert" Display="None"></asp:RequiredFieldValidator>
+                 <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Shirtnumber must be integer" Operator="DataTypeCheck" 
+                          Type="Integer" ValidationGroup="Insert" ControlToValidate="ShirtNr" Display="None"></asp:CompareValidator>
             </div>
             <h2>Position</h2>
               <asp:CheckBoxList ID="CheckBoxList" runat="server"  ItemType="IV_Rovers.Model.PlayerType" DataValueField="PlTypeID" DataTextField="PlType" SelectMethod="PlayerFormView_GetItem"  RepeatColumns="5" RepeatLayout="Table" />
