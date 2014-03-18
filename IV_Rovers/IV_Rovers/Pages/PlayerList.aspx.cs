@@ -27,8 +27,5 @@ namespace IV_Rovers.Pages
             return Service.GetPlayers();
         }
 
-       
-
-
         }
     }

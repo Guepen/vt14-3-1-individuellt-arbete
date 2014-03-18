@@ -64,7 +64,6 @@
     <Content Include="Content\Crazy.wav" />
     <Content Include="Content\Style.css" />
     <Content Include="Global.asax" />
-    <Content Include="Pages\DeletePlayer.aspx" />
     <Content Include="Pages\EditPlayer.aspx" />
     <Content Include="Pages\InsertPlayer.aspx" />
     <Content Include="Pages\PlayerDetails.aspx" />
@@ -93,13 +92,6 @@
     <Compile Include="Model\PlayerType.cs" />
     <Compile Include="Model\Position.cs" />
     <Compile Include="Model\Service.cs" />
-    <Compile Include="Pages\DeletePlayer.aspx.cs">
-      <DependentUpon>DeletePlayer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\DeletePlayer.aspx.designer.cs">
-      <DependentUpon>DeletePlayer.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Pages\EditPlayer.aspx.cs">
       <DependentUpon>EditPlayer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

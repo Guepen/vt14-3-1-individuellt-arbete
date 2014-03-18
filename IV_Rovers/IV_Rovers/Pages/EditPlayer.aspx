@@ -29,7 +29,7 @@
                         ControlToValidate="LName" ValidationGroup="Update" Display="None"></asp:RequiredFieldValidator>
                 </div>
                 <div>
-                    <label>Height</label>
+                    <label>Height(cm)</label>
                 </div>
                 <div>
                     <asp:TextBox ID="Height" runat="server" Text='<%# BindItem.Height %>' MaxLength="3" />
@@ -39,7 +39,7 @@
                          Type="Integer" ValidationGroup="Update" ControlToValidate="Height" Display="None"></asp:CompareValidator>
                 </div>
                 <div>
-                    <label>Weight</label>
+                    <label>Weight(kg)</label>
                 </div>
                 <div>
                     <asp:TextBox ID="Weight" runat="server" Text='<%# BindItem.Weight %>' MaxLength="3" />

@@ -19,7 +19,7 @@
             </div>
 
             <div>
-                <label>Height: </label>
+                <label>Height (CM): </label>
                 <%#: Item.Height %>
             </div>
 
