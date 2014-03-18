@@ -34,7 +34,7 @@ namespace IV_Rovers.Pages.Shared
         protected void Button1_Click(object sender, EventArgs e)
         {
             //strängen style tilldelas länk till vald layout
-            string style = "<LINK href=\'../../Content/Crazy.css\' type=\"text/css\" rel=\"stylesheet\">";
+            string style = "<LINK href=\'/1dv406/th222fa/Content/Crazy.css\' type=\"text/css\" rel=\"stylesheet\">";
             string audioFile;
 
             //stylesheetlänken i min masterpage sätts till vald layout
@@ -42,7 +42,7 @@ namespace IV_Rovers.Pages.Shared
             Page.SetTempData("Layout", Literal1.Text);
             
             //sökevägen till min ljudfil
-            audioFile = System.IO.Path.Combine(AppDomain.CurrentDomain.GetData("APPBASE").ToString(), @"Content/Crazy.wav");
+            audioFile = System.IO.Path.Combine(AppDomain.CurrentDomain.GetData("APPBASE").ToString(), @"Content\Crazy.wav");
             SoundPlayer sound = new SoundPlayer(audioFile);
 
             //Startar låten
@@ -55,12 +55,15 @@ namespace IV_Rovers.Pages.Shared
         protected void Button2_Click(object sender, EventArgs e)
         {
             //strängen style tilldelas länk till vald layout
-            string style = "<LINK href=\"../../Content/Style.css\" type=\"text/css\" rel=\"stylesheet\">";
+            string style = "<LINK href=\"/1dv406/th222fa/Content/Style.css\" type=\"text/css\" rel=\"stylesheet\">";
 
             //stylesheetlänken i min masterpage sätts till vald layout
             Literal1.Text = style;
             Page.SetTempData("Layout", Literal1.Text);
-            SoundPlayer sound = new SoundPlayer(@"Content/Crazy.wav");
+            //SoundPlayer sound = new SoundPlayer(@"Content\Crazy.wav");
+            string audioFile;
+            audioFile = System.IO.Path.Combine(AppDomain.CurrentDomain.GetData("APPBASE").ToString(), @"Content\Crazy.wav");
+            SoundPlayer sound = new SoundPlayer(audioFile);
             sound.Stop();
         }
     }

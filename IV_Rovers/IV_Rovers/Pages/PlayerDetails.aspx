@@ -5,8 +5,10 @@
         ItemType="IV_Rovers.Model.Player"
         SelectMethod="FormView1_GetItem"
         DeleteMethod="FormView1_DeleteItem"
-        RenderOuterTable="false">
-
+        RenderOuterTable="false" 
+        DefaultMode="ReadOnly"
+        >
+       <%-- mall för att visa spelare--%>
         <ItemTemplate>
             <div>
                 <label>Firstname: </label>
@@ -32,6 +34,8 @@
                 <label>Shirtnumber: </label>
                 <%#: Item.ShirtNr %>
             </div>
+            
+           <%-- visar spelarens alla positioner--%>
             <asp:ListView ID="ListView1" runat="server"
                 ItemType="IV_Rovers.Model.Position"
                 SelectMethod="ListView1_GetData"
@@ -49,6 +53,7 @@
             </asp:ListView>
 
             <div id="Menu">
+               <%-- länkar för att ta komma till redigeringssidan, ta bort spelare och gå till listan med spelare--%>
                 <asp:HyperLink ID="HyperLink1" runat="server" Text="Edit" NavigateUrl='<%# GetRouteUrl("Edit", new { id = Item.PlayerID }) %>' />
                 <asp:LinkButton ID="LinkButton2" runat="server" CommandName="Delete" Text="Ta Bort" CausesValidation="false" OnClientClick="return confirm('Är du säker på att du vill ta bort Spelaren?')" />
                 <asp:HyperLink ID="HyperLink3" runat="server" Text="Go To List" NavigateUrl='<%# GetRouteUrl("PlayerList", null)%>' />

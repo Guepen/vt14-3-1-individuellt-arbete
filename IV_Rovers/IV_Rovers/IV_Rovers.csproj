@@ -70,6 +70,7 @@
     <Content Include="Pages\PlayerList.aspx" />
     <Content Include="Pages\Shared\Error.aspx" />
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\th222fa.pubxml" />
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.0.js" />
     <Content Include="Scripts\jquery-2.1.0.min.js" />

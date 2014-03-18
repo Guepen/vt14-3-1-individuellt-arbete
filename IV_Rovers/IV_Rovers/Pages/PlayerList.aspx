@@ -3,8 +3,10 @@
 <asp:Content ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="NewPlayer">
         <asp:HyperLink runat="server" Text="New Player" NavigateUrl="<%$ RouteUrl:routename=InsertPlayer %>" />
-      
+
     </div>
+
+    <%--  Visar alla spelare. --%>
     <asp:ListView ID="PlayerListView" runat="server"
         ItemType="IV_Rovers.Model.Player"
         SelectMethod="PlayerListView_GetData"
@@ -24,14 +26,15 @@
                     </th>
                     <th>Shirtnumber
                     </th>
-                    <th>
-                        Deatils
+                    <th>Deatils
                     </th>
                 </tr>
+                <%-- Platshållare för nya rader --%>
                 <asp:PlaceHolder ID="itemPlaceholder" runat="server"></asp:PlaceHolder>
             </table>
         </LayoutTemplate>
         <ItemTemplate>
+             <%-- Mall för nya rader. --%>
             <tr>
                 <td>
                     <%#: Item.FName %>
@@ -48,9 +51,10 @@
                 <td>
                     <%#: Item.ShirtNr %>
                 </td>
-      
+
+                 <%-- Länk till spelares detaljer --%>
                 <td>
-                    <asp:HyperLink  Text="More Information" runat="server" NavigateUrl='<%# GetRouteUrl("Details", new { id = Item.PlayerID})%>'/>
+                    <asp:HyperLink Text="More Information" runat="server" NavigateUrl='<%# GetRouteUrl("Details", new { id = Item.PlayerID})%>' />
                 </td>
             </tr>
         </ItemTemplate>
