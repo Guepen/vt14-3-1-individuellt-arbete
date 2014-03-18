@@ -13,6 +13,7 @@ namespace IV_Rovers.Pages
     {
         private Service _service;
 
+        //objektet skapas först när det behövs
         private Service Service
         {
             get { return _service ?? (_service = new Service()); }
@@ -22,8 +23,7 @@ namespace IV_Rovers.Pages
 
         }
 
-        // The id parameter should match the DataKeyNames value set on the control
-        // or be decorated with a value provider attribute, e.g. [QueryString]int id
+       //hämtar spelare per ID
         public Player FormView1_GetItem([RouteData] int id)
         {
             return Service.GetPlayerByID(id);
@@ -47,6 +47,7 @@ namespace IV_Rovers.Pages
             }
         }
 
+        //Hämtar ut alla spelarens positionsID
         public IEnumerable<Position> ListView1_GetData([RouteData] int id)
         {
             return Service.GetPosition(id);
@@ -60,15 +61,9 @@ namespace IV_Rovers.Pages
                 // Typomvandlar e.Item.DataItem så att primärnyckelns värde kan hämtas och...
                 var position = (Position)e.Item.DataItem;
    
+                //alla spelaren positioner skrivs ut i en label
                 label.Text = Service.GetPlayerTypeByID(position.PlTypeID).PlType;
             
-
-            /*var position = e.Item.DataItem as Position;
-            if (position != null)
-            {
-                var playerType = Service.GetPlayerTypeByID(position.PlTypeID);
-                var label = e.Item.FindControl("PositionLabel") as Label;
-                label.Text = playerType.PlType;*/
             }
 	
             }

@@ -9,7 +9,8 @@ namespace IV_Rovers
     {
         public static void Routes(RouteCollection routes)
         {
-            routes.MapPageRoute("PlayerList", "PlayerList", "~/Pages/PlayerList.aspx");
+            routes.MapPageRoute("Default", "", "~/Pages/PlayerList.aspx");
+            routes.MapPageRoute("PlayerList", "Playerlist", "~/Pages/PlayerList.aspx");
             routes.MapPageRoute("InsertPlayer", "Player/New", "~/Pages/InsertPlayer.aspx");
             routes.MapPageRoute("Details", "Player/{id}", "~/Pages/PlayerDetails.aspx");
             routes.MapPageRoute("Edit", "Player/Edit/{id}", "~/Pages/EditPlayer.aspx");

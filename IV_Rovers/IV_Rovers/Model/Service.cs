@@ -29,6 +29,7 @@ namespace IV_Rovers.Model
             get { return _positionDAL ?? (_positionDAL = new PositionDAL()); }
         }
 
+       //spelarens ID skickas som parameter till metoden DeletePlayerID här nedan.
         public void DeletePlayer(Player player)
         {
             DeletePlayerID(player.PlayerID);

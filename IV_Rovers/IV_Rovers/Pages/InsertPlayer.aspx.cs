@@ -32,8 +32,10 @@ namespace IV_Rovers.Pages
                     Service.SavePlayer(player);
                     var checkBoxList = PlayerFormView.FindControl("CheckBoxList") as CheckBoxList;
 
+                    //loopar igenom kryssrutorna
                     for (int i = 0; i < checkBoxList.Items.Count; i++)
                     {
+                        //om positionen är vald sparas den
                         if (checkBoxList.Items[i].Selected)
                         {
                             var position = new Position();
@@ -57,12 +59,13 @@ namespace IV_Rovers.Pages
             }
         }
 
-
+        //hämtar ut alla spelartyper
         public IEnumerable<PlayerType> PlayerFormView_GetItem()
         {
             return Service.GetPlayerTypes();
         }
 
+       //validerar att en kryssruta är vald
         protected void InsertPosition_ServerValidate(object source, ServerValidateEventArgs args)
         {
             var checkBoxList = PlayerFormView.FindControl("CheckBoxList") as CheckBoxList;

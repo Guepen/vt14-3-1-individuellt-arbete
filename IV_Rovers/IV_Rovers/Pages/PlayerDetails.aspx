@@ -19,12 +19,12 @@
             </div>
 
             <div>
-                <label>Height (CM): </label>
+                <label>Height(cm): </label>
                 <%#: Item.Height %>
             </div>
 
             <div>
-                <label>Weight: </label>
+                <label>Weight(kg): </label>
                 <%#: Item.Weight %>
             </div>
 
